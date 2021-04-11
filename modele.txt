@@ -3,5 +3,5 @@ Ce fichier décrit le modèle utilisé pour résoudre cet exercice:
 Pour trouver la meilleure solution:
  - on cherche la valeur max (comprise entre 0 et 3) comprise dans la grille du jeu -> MAX
  - on regarde si toutes les cases avec cette valeur MAX (qui est la meilleure solution) ont été cliquées ou pas (et donc rendues visibles)
- - si elles ont toutes déjà été cliquées on décrémente cette valeur MAX => MAX - 1
- - ainsi la meilleure solution est la plus grande valeur pour laquelle toutes les cases du jeu n'ont pas été jouées
+ - si elles ont toutes déjà été cliquées on décrémente cette valeur de 1: MAX => MAX - 1
+ - ainsi la meilleure solution est la plus grande valeur pour laquelle toutes les cases du jeu n'ont pas encore été jouées
