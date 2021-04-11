@@ -1,0 +1,2 @@
+Ce fichier décrit le modèle utilisé pour résoudre cet exercice
+
