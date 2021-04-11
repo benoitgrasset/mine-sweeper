@@ -43,6 +43,9 @@ export const useStyles = makeStyles((theme: Theme) => {
             background: "pink",
             color: "black"
         },
+        bestSolution: {
+            background: "orange"
+        },
         container: {
             display: "flex",
             "&>*": {
@@ -56,6 +59,12 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         highScores: {
             marginLeft: 40
+        },
+        header: {
+            display: "flex",
+            "&>*": {
+                marginLeft: 20
+            }
         }
     })
 })

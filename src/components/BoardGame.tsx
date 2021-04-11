@@ -4,7 +4,7 @@ import Score from "./Score"
 import SolverCell from "./SolverCell"
 import { useDispatch, useSelector } from "react-redux"
 import { selectGrid, updateGrid, selectScore, selectScores } from "../redux/app"
-import { Button, Table, TableBody, TableHead, TableRow, TableCell } from "@material-ui/core"
+import { Button, Table, TableBody, TableHead, TableRow, TableCell, Switch, FormGroup, FormControlLabel } from "@material-ui/core"
 import { useStyles } from "./index_styles"
 import { CellProps } from "./Cell"
 
@@ -28,6 +28,12 @@ const BoardGame: React.FunctionComponent<{}> = (props) => {
 
     const dispatch = useDispatch()
 
+    const [helpMode, setHelpMode] = React.useState(false)
+
+    const handleChange = () => {
+        setHelpMode(prevState => !prevState)
+    }
+
     const grid = useSelector(selectGrid)
 
     const handleNewGame = () => {
@@ -43,16 +49,24 @@ const BoardGame: React.FunctionComponent<{}> = (props) => {
     const scores = useSelector(selectScores)
 
     if (score >= maxScore) {
-        alert("You win !!")
+        alert("You win !! 🥳")
         dispatch(updateGrid({ score }))
     }
 
     return (
         <div className={classes.root}>
-            <div><Button color="secondary" variant="contained" onClick={handleNewGame}>{"New game"}</Button></div>
+            <div className={classes.header}>
+                <Button color="primary" variant="contained" onClick={handleNewGame}>{"New game"}</Button>
+                <FormGroup>
+                    <FormControlLabel
+                        control={<Switch checked={helpMode} onChange={handleChange} color="primary" />}
+                        label="Help mode"
+                    />
+                </FormGroup>
+            </div>
             <div>
                 <div className={classes.container}>
-                    <Grid grid={grid} />
+                    <Grid grid={grid} helpMode={helpMode} />
                     <div className={classes.vScores}>{hScores.map(cell => <SolverCell>{cell}</SolverCell>)}</div>
                     <div className={classes.highScores}>
                         <h1>{"High scores (5)"}</h1>
