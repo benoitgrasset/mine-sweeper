@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from "react-redux";
+import { appStore } from "./redux/app";
 import './index.css';
-import App from './App';
+import BoardGame from './components/BoardGame';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={appStore}>
+    <React.StrictMode>
+      <BoardGame />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
