@@ -1,3 +1,5 @@
+This application has been deployed here: https://benoitgrasset.github.io/mine-sweeper/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
