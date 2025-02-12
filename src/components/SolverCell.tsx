@@ -1,17 +1,14 @@
-import React from "react"
-import { useStyles } from "./index_styles"
+import React from "react";
+import { useStyles } from "./index_styles";
 
+type Props = {
+  children: React.ReactNode;
+};
 
-const SolverCell: React.FunctionComponent<{}> = (props) => {
+const SolverCell = ({ children }: Props) => {
+  const classes = useStyles();
 
-    const classes = useStyles()
-    const { children } = props
+  return <div className={classes.solverCell}>{children}</div>;
+};
 
-    return (
-        <div className={classes.solverCell} >
-            {children}
-        </div>
-    )
-}
-
-export default SolverCell
+export default SolverCell;
